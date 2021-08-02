@@ -1,21 +1,31 @@
-#!/bin/python
+from colorama import Fore
 
-from colorama import Fore,Back
-import os
-
+#color
 red = Fore.RED
-green = Fore.GREEN 
-reset = Fore.RESET + Back.RESET
-Black = Fore.BLACK + Back.BLUE
+blue = Fore.BLUE
+green = Fore.GREEN
+black = Fore.BLACK
+reset = Fore.RESET
 
-print(Black + "Author : 106_Sam" + reset)
+print(red + "Author : 106_Sam" + reset)
+key=13
+yek=13-26
+formula = lambda x,k : chr(((ord(x)-65+k)%26)+65)
+print(black + "1. Encryption \n" +
+      "2. Decryption\n" + reset)
+choice = int(input("Choose (1-2) : "))
 
-operation = lambda P,k: chr(((ord(P)-65+k)%26)+65
+if choice == 1:
+    plain = input(green + "Plain Text : " + reset)
+    #key=13
+    ciphertext = list(map(lambda x:formula(x,key),plain))
+    print(ciphertext)
 
-plaintext = input("Plain Text : \n")
 
-key = input("Key : ")
-print(key)
-cipher = list(map(lamba x:operation(P,key),plaintext))
-print(cipher)
+elif choice == 2:
+    cipher = input(blue + "Cipher Text : " + reset)
+    plaintext = list(map(lambda x:formula(x, yek),cipher))
+    print(plaintext)
 
+else:
+    print("Something Went wrong")
